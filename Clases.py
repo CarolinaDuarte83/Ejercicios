@@ -9,7 +9,7 @@
 # A su vez, cada curso pertenece a alguna de las
 # siguientes categorías (Inicial, Intermedio, Avanzado). 
 
-"""class curso_oficio:
+class curso_oficio:
     def __init__(self, fecha_comiezo, titulo, descripcion, objetivo, programa, costo, duracion, foto, estado, categoria):
         self.fecha_comienzo = fecha_comiezo
         self.titulo = titulo
@@ -100,14 +100,14 @@ else:
 if curso2.estado:
     print("El curso de soldador inicial está disponible.")
 else:
-    print("El curso de soldador inicial no está disponible.")"""
+    print("El curso de soldador inicial no está disponible.")
 
 
 #Por otro lado, los cursos contienen un
 # conjunto de clases, en donde por cada clase se debe mostrar la fecha, título, contenido,
 # URLDrive.
 
-"""class Clase:
+class Clase:
     def __init__(self, fecha, titulo, contenido, URLDrive):
         self._fecha = fecha
         self._titulo = titulo
@@ -149,8 +149,7 @@ info_curso1.set_contenido("Manipulacion de Herramientas")
 print("El contenido del curso es:", info_curso1.get_contenido())
 
 info_curso2.set_titulo("soldador inicial")
-print("Título de la clase:", info_curso2.get_titulo())"""
-
+print("Título de la clase:", info_curso2.get_titulo())
 
 
 # Cada clase de un curso la dicta un docente, y este puede participar en el dictado de varias
@@ -158,7 +157,7 @@ print("Título de la clase:", info_curso2.get_titulo())"""
 # nacimiento, dirección, localidad, código postal, provincia, teléfono celular, email.
 
 
-"""class Docente:
+class Docente:
     def __init__(self, apellido, nombre, dni, fecha_nacimiento, direccion, localidad, cod_postal, provincia, telefono_celular, email):
         self._apellido = apellido
         self._nombre = nombre
@@ -254,7 +253,7 @@ docente2 = Docente("Duarte", "Carolina", "222222222", "02/02/2000", "La Lomita 2
 
 print("Fecha de Nacimiento del docente 2:", docente2.get_fecha_nacimiento())
 print("Direccion del docente 2:", docente2.get_direccion())
-print("Telefono Celular del Docente 2:", docente2.get_telefono_celular())"""
+print("Telefono Celular del Docente 2:", docente2.get_telefono_celular())
 
 
 
@@ -265,7 +264,7 @@ print("Telefono Celular del Docente 2:", docente2.get_telefono_celular())"""
 # deberá validar que el email sea verdadero y esté en funcionamiento, enviando un correo
 # automático al email registrado.
 
-"""class Usuario_Final:
+class Usuario_Final:
     def __init__(self, nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave_acceso):
         self.nombre = nombre
         self.apellido = apellido
@@ -293,7 +292,7 @@ usuario_1.activar_cuenta()
 
 usuario_2 = Usuario_Final("Lena", "Zarate", "5555555", "23/04/2006", "Lejos de casa 333", "Cordoba", "5000", "Cordoba", "351777777", "lenitalabuenita@gmail.com", "Lena456")
 
-usuario_2.activar_cuenta()"""
+usuario_2.activar_cuenta()
 
 
     
@@ -303,7 +302,7 @@ usuario_2.activar_cuenta()"""
 # interacción con el sistema: Administrador, Docente. Los usuarios también deben tener
 # asociado un estado (Activo / Inactivo).
 
-"""class Usuario:
+class Usuario:
     def __init__(self, nombre, apellido, dni, direccion, fecha_nacimiento, email, telefono, clave_acceso, estado):
         self.nombre = nombre
         self.apellido = apellido
@@ -387,7 +386,7 @@ print(f"{administrador_1.nombre} tiene los siguientes roles: {', '.join(administ
 print(f"Estado de {administrador_1.nombre}: {administrador_1.estado}")
 
 print(f"{docente_1.nombre} tiene los siguientes roles: {', '.join(docente_1.roles)}")
-print(f"Estado de {docente_1.nombre}: {docente_1.estado}")"""
+print(f"Estado de {docente_1.nombre}: {docente_1.estado}")
 
 
 
@@ -402,7 +401,7 @@ print(f"Estado de {docente_1.nombre}: {docente_1.estado}")"""
 # requisitos según el formato de historias de usuario. Para la creación de las historias, hacer uso
 # del repositorio Github, a través de creación de issues.
 
-"""class Usuario_Final:
+class Usuario_Final:
     def __init__(self, nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email, clave_acceso):
         self.nombre = nombre
         self.apellido = apellido
@@ -470,7 +469,7 @@ class MedioPago:
     def registrar_datos(self):
         pass
 
-curso1 = Curso("pic.jpg", "Electricidad en el hogar", "4 meses", 40.000)
+curso1 = Curso("pic.jpg", "Electricidad en el hogar", "4 meses", 40000)
 
 
 
@@ -484,4 +483,148 @@ usuario.agregar_al_carrito(curso1)
 medio_pago = MedioPago("Tarjeta de Debito", "Número de tarjeta: 1234-5678-1234-5678")
 usuario.seleccionar_medio_pago(medio_pago)
 
-usuario.confirmar_compra()"""
+usuario.confirmar_compra()
+
+
+class Docente(Usuario):
+    def __init__(self, nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email):
+        super().__init__(nombre, apellido, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email)
+
+#  Generar una clase nueva que sea compra y contenga:
+# o Id_Compra
+# o Id_Carrito_Compra
+# o Id_Medios_Pago
+# o Id_Usuario
+# o Fecha
+# o Monto_Total
+
+class Compra:
+    def __init__(self, Id_Compra, Id_Carrito_Compra, Id_Medios_Pago, Id_Usuario, Fecha, Monto_Total):
+        self._Id_Compra = Id_Compra
+        self._Id_Carrito_Compra = Id_Carrito_Compra
+        self._Id_Medios_Pago = Id_Medios_Pago
+        self._Id_Usuario = Id_Usuario
+        self._Fecha = Fecha
+        self._Monto_Total = Monto_Total
+
+    def get_Id_Compra(self):
+        return self._Id_Compra
+
+    def set_Id_Compra(self, nuevo_Id_Compra):
+        self._Id_Compra = nuevo_Id_Compra
+
+    def get_Id_Carrito_Compra(self):
+        return self._Id_Carrito_Compra
+
+    def set_Id_Carrito_Compra(self, nuevo_Id_Carrito_Compra):
+        self._Id_Carrito_Compra = nuevo_Id_Carrito_Compra
+
+    def get_Id_Medios_Pago(self):
+        return self._Id_Medios_Pago
+
+    def set_Id_Medios_Pago(self, nuevo_Id_Medios_Pago):
+        self._Id_Medios_Pago = nuevo_Id_Medios_Pago
+
+    def get_Id_Usuario(self):
+        return self._Id_Usuario
+
+    def set_Id_Usuario(self, nuevo_Id_Usuario):
+        self._Id_Usuario = nuevo_Id_Usuario
+
+    def get_Fecha(self):
+        return self._Fecha
+
+    def set_Fecha(self, nueva_Fecha):
+        self._Fecha = nueva_Fecha
+
+    def get_Monto_Total(self):
+        return self._Monto_Total
+
+    def set_Monto_Total(self, nuevo_Monto_Total):
+        self._Monto_Total = nuevo_Monto_Total
+
+#  Generar una clase de Medios de Contacto que contenga:
+# o Id_MedioContacto
+# o Fecha
+# o Email
+# o Telefono
+# o Direccion
+# o Nombre
+
+class MediosDeContacto:
+    def __init__(self, Id_MedioContacto, Fecha, Email, Telefono, Direccion, Nombre):
+        self._Id_MedioContacto = Id_MedioContacto
+        self._Fecha = Fecha
+        self._Email = Email
+        self._Telefono = Telefono
+        self._Direccion = Direccion
+        self._Nombre = Nombre
+
+    def get_Id_MedioContacto(self):
+        return self._Id_MedioContacto
+
+    def set_Id_MedioContacto(self, nuevo_Id_MedioContacto):
+        self._Id_MedioContacto = nuevo_Id_MedioContacto
+
+    def get_Fecha(self):
+        return self._Fecha
+
+    def set_Fecha(self, nueva_Fecha):
+        self._Fecha = nueva_Fecha
+
+    def get_Email(self):
+        return self._Email
+
+    def set_Email(self, nuevo_Email):
+        self._Email = nuevo_Email
+
+    def get_Telefono(self):
+        return self._Telefono
+
+    def set_Telefono(self, nuevo_Telefono):
+        self._Telefono = nuevo_Telefono
+
+    def get_Direccion(self):
+        return self._Direccion
+
+    def set_Direccion(self, nueva_Direccion):
+        self._Direccion = nueva_Direccion
+
+    def get_Nombre(self):
+        return self._Nombre
+
+    def set_Nombre(self, nuevo_Nombre):
+        self._Nombre = nuevo_Nombre
+
+#  Generar una clase que sea: Tipos de Medio de Contacto en formato enum:
+# o WhatsApp
+# o Correo electrónico
+# o Call center
+# o Referido interno
+
+#  La clase Tipos de Medio de Contacto debe heredar de Medios de contacto.
+
+class TiposDeMedioDeContacto(MediosDeContacto):
+    def __init__(self, Id_MedioContacto, Fecha, Email, Telefono, Direccion, Nombre, Tipo):
+        super().__init__(Id_MedioContacto, Fecha, Email, Telefono, Direccion, Nombre)
+        self._Tipo = Tipo
+      
+    def get_Tipo(self):
+        return self._Tipo
+
+    def set_Tipo(self, nuevo_Tipo):
+        self._Tipo = nuevo_Tipo
+        
+
+
+compra = Compra("15", "456", "23", "Tomate123", "2023-09-11", 40000)
+
+id_compra = compra.get_Id_Compra()
+print(f"Id de Compra: {id_compra}")
+nuevo_id_compra = "44"
+compra.set_Id_Compra(nuevo_id_compra)
+print(f"Nuevo Id de Compra: {compra.get_Id_Compra()}")
+
+
+
+
